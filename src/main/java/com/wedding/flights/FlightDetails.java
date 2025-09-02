@@ -49,4 +49,30 @@ public class FlightDetails {
 
     public Airport getDestination() { return destination; }
     public void setDestination(Airport destination) { this.destination = destination; }
+
+    @Override
+    public String toString() {
+        return "FlightDetails{" +
+                airline + "|" + flightNumber + "|" +
+                (departureDate == null ? "" : departureDate) + " " +
+                (departureTime == null ? "" : departureTime) + " " +
+                origin + "→" + destination +
+                "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof FlightDetails f)) return false;
+        return java.util.Objects.equals(airline, f.airline) &&
+            java.util.Objects.equals(flightNumber, f.flightNumber) &&
+            java.util.Objects.equals(departureDate, f.departureDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(airline, flightNumber, departureDate);
+    }
+
 }
+
