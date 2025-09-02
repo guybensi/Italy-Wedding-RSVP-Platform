@@ -5,7 +5,7 @@ import com.wedding.guests.*;
 import java.util.Objects;
 
 public class RoomPermissionService {
-    private final RoomService rooms;
+    private final RoomService rooms; 
 
     public RoomPermissionService(RoomService rooms, InviterRepository inviters) {
         this.rooms = rooms;
